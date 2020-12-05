@@ -17,9 +17,9 @@ const PokemonCard: React.FC<Props> = ({ name, url }) => {
   }, [url]);
 
   return (
-    <div className="border m-2 max-w-3xs rounded shadow">
+    <div className="border m-2 max-w-2xs rounded shadow-md bg-gray-200">
       <p className="text-lg font-semibold text-center">{name}</p>
-      <img className="mx-auto" src={spritesUrl} alt={name} />
+      <img className="mx-auto w-60" src={spritesUrl} alt={name} />
     </div>
   );
 };

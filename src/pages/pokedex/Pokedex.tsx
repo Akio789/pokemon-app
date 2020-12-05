@@ -15,7 +15,7 @@ const Pokedex: React.FC = () => {
   }, []);
 
   return (
-    <div className="container mx-auto grid xl:grid-cols-9 lg:grid-cols-7 md:grid-cols-5 sm:grid-cols-3 grid-cols-2 gap-4">
+    <div className="container mx-auto xl:px-20 grid xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 gap-4">
       {
         pokemonList.map(({ name, url }) => {
           return <PokemonCard key={name} name={capitalize(name)} url={url} />
