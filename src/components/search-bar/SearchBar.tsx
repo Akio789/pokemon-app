@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import PokemonContext from '../../context/pokemon-context';
+import { PokemonData } from '../../api/pokemon/types';
 
 const SearchBar: React.FC = () => {
   const [query, setQuery] = useState('');
-  const history = useHistory();
-  const handleClick = () => {
-    history.push(query.toLowerCase());
+  const handleClick = (
+    allPokemon: PokemonData[],
+    updateCurrentPokemon: (pokemon: PokemonData[]) => void
+  ) => {
+    const searchResults = allPokemon.filter(({ name }) => {
+      return name.includes(query.toLowerCase());
+    });
+    updateCurrentPokemon(searchResults);
   }
 
   return (
     <PokemonContext.Consumer>
       {
-        pokemonContext => (
+        ({ allPokemon, updateCurrentPokemon }) => (
           < div className="text-center">
             <input
               className="border-2 border-gray-400 rounded p-2 m-2 text-lg font-semibold"
@@ -23,7 +28,7 @@ const SearchBar: React.FC = () => {
               id="search"
               placeholder="Pokemon name" />
             <button
-              onClick={handleClick}
+              onClick={() => handleClick(allPokemon, updateCurrentPokemon!)}
               className="border-2 bg-blue-500 hover:bg-blue-700 rounded-md px-4 py-1 text-lg font-semibold text-white"
             >Search</button>
           </div>

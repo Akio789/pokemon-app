@@ -1,6 +1,11 @@
 import React from 'react';
-import { PokemonData } from '../api/pokemon/types';
+import { GlobalPokemonContext } from './types';
 
-const PokemonContext = React.createContext<PokemonData[]>([]);
+const PokemonContext = React.createContext<GlobalPokemonContext>(
+  {
+    allPokemon: [],
+    currentPokemon: []
+  }
+);
 
 export default PokemonContext;

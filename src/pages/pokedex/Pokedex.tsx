@@ -3,6 +3,7 @@ import { getPokemonList } from '../../api/pokemon/pokemon';
 import { PokemonData } from '../../api/pokemon/types';
 import PokemonCard from '../../components/pokemon-card/PokemonCard';
 import SearchBar from '../../components/search-bar/SearchBar';
+import PokemonContext from '../../context/pokemon-context';
 
 const Pokedex: React.FC = () => {
   const [pokemonList, setPokemonList] = useState<Array<PokemonData>>([]);
@@ -18,13 +19,20 @@ const Pokedex: React.FC = () => {
   return (
     <>
       <SearchBar />
-      <div className="container mx-auto xl:px-20 grid xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 gap-4">
+      <PokemonContext.Consumer>
         {
-          pokemonList.map(({ name, url }) => {
-            return <PokemonCard key={name} name={capitalize(name)} url={url} />
-          })
+          ({ currentPokemon }) => (
+
+            <div className="container mx-auto xl:px-20 grid xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 gap-4">
+              {
+                currentPokemon.slice(0, 20).map(({ name, url }) => {
+                  return <PokemonCard key={name} name={capitalize(name)} url={url} />
+                })
+              }
+            </div>
+          )
         }
-      </div>
+      </PokemonContext.Consumer>
     </>
   );
 };
