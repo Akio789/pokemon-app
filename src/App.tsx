@@ -1,7 +1,8 @@
 import React from 'react';
+import Pokedex from './pages/Pokedex';
 
-const App = () => {
-  return <div className="text-lg">Hello World!</div>;
+const App: React.FC = () => {
+  return <Pokedex />;
 }
 
 export default App;
