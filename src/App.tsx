@@ -10,9 +10,14 @@ import PokemonContext from './context/pokemon-context';
 const App: React.FC = () => {
   const [allPokemon, setAllPokemon] = useState<PokemonData[]>([]);
   const [currentPokemon, setCurrentPokemon] = useState<PokemonData[]>([]);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   const updateCurrentPokemon = (pokemon: PokemonData[]) => {
     setCurrentPokemon(pokemon);
+  };
+
+  const updateCurrentPage = (page: number) => {
+    setCurrentPage(page);
   };
 
   useEffect(() => {
@@ -24,7 +29,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <PokemonContext.Provider value={{ allPokemon, currentPokemon, updateCurrentPokemon }}>
+    <PokemonContext.Provider value={{ allPokemon, currentPokemon, updateCurrentPokemon, perPage: 20, currentPage, updateCurrentPage }}>
       <Switch>
         <Route exact path="/">
           <Pokedex />

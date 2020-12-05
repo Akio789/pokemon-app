@@ -16,3 +16,4 @@ If you click any pokemon or type their name in the search bar and send it, you'l
 - [Typescript](https://www.typescriptlang.org/)
 - [Axios](https://github.com/axios/axios)
 - [TailwindCSS](https://tailwindcss.com/)
+- [MaterialUI](https://material-ui.com/)

@@ -4,7 +4,9 @@ import { GlobalPokemonContext } from './types';
 const PokemonContext = React.createContext<GlobalPokemonContext>(
   {
     allPokemon: [],
-    currentPokemon: []
+    currentPokemon: [],
+    perPage: 20,
+    currentPage: 1
   }
 );
 
