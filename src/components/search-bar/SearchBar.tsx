@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Props } from './types';
+import { useHistory } from 'react-router-dom';
 
-const SearchBar: React.FC<Props> = ({ search }) => {
+const SearchBar: React.FC = () => {
   const [query, setQuery] = useState('');
+  const history = useHistory();
   const handleClick = () => {
-    search(query);
+    history.push(query.toLowerCase());
   }
 
   return (

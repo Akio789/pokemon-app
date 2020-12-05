@@ -17,7 +17,7 @@ const Pokedex: React.FC = () => {
 
   return (
     <>
-      <SearchBar search={() => { }} />
+      <SearchBar />
       <div className="container mx-auto xl:px-20 grid xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 gap-4">
         {
           pokemonList.map(({ name, url }) => {
