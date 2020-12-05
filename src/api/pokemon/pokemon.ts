@@ -1,9 +1,12 @@
 import api from '../index';
-import { PokemonDataListResponse } from './types';
+import { PokemonDataListResponse, PokemonDetailDataResponse } from './types';
 
-const getPokemonList = async () => {
-  const pokemon: PokemonDataListResponse = await api.get('pokemon');
-  return pokemon;
+export const getPokemonList = async () => {
+  const pokemonDataList: PokemonDataListResponse = await api.get('pokemon');
+  return pokemonDataList;
 }
 
-export { getPokemonList };
+export const getPokemonDetail = async (path: string) => {
+  const pokemonDetail: PokemonDetailDataResponse = await api.get(path);
+  return pokemonDetail;
+}

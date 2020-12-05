@@ -32109,6 +32109,18 @@ video {
           animation: bounce 1s infinite;
 }
 
+.max-w-2xs {
+  max-width: 16rem;
+}
+
+.max-w-3xs {
+  max-width: 12rem;
+}
+
+.max-w-4xs {
+  max-width: 8rem;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
