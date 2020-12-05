@@ -3,12 +3,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).  
 This project uses [PokeApi](https://pokeapi.co/).
 
-## The app's modules
+## The app's modules :rocket:
 ### Pokedex
-The main page, here you can find pokemon along with their sprites.
-If you click any pokemon or type their name in the search bar and send it, you'll be taken to the pokemon's detail page.
+The main page, here you can find pokemon along with their sprites.  
+The pokemon are paginated and can be searched by name.
 
-## In this project I practiced :rocket:
+## In this project I practiced :raised_hands:
 - [React](https://reactjs.org/)
 - [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 - [React Context](https://reactjs.org/docs/context.html)
