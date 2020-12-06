@@ -35,3 +35,15 @@ export interface PokemonDetailData {
 export interface PokemonDetailDataResponse extends Response {
   data: PokemonDetailData;
 }
+
+export interface FlavorText {
+  flavor_text: string;
+}
+
+export interface PokemonSpeciesData {
+  flavor_text_entries: FlavorText[];
+}
+
+export interface PokemonSpeciesDataResponse {
+  data: PokemonSpeciesData;
+}
