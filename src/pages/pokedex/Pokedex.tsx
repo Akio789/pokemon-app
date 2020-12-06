@@ -3,11 +3,9 @@ import PokemonCard from '../../components/pokemon-card/PokemonCard';
 import SearchBar from '../../components/search-bar/SearchBar';
 import PokemonContext from '../../context/pokemon-context';
 import Paginator from '../../components/paginator/Paginator';
+import { capitalize } from '../../util';
 
 const Pokedex: React.FC = () => {
-  const capitalize = (name: string) => {
-    return name[0].toUpperCase() + name.slice(1);
-  };
   const getStart = (page: number, perPage: number) => {
     return (page - 1) * perPage;
   };
@@ -26,7 +24,6 @@ const Pokedex: React.FC = () => {
                 {
                   currentPokemon.slice(getStart(currentPage, perPage), getEnd(currentPage, perPage))
                     .map(({ name, url }) => {
-                      console.log(name);
                       return <PokemonCard key={name} name={capitalize(name)} url={url} />
                     })
                 }

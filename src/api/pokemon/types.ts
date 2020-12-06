@@ -24,10 +24,12 @@ export interface PokemonDataListResponse extends Response {
 
 export interface PokemonDetailDataSprites {
   front_default: string;
+  back_default: string;
 }
 
 export interface PokemonDetailData {
   sprites: PokemonDetailDataSprites;
+  species: PokemonData;
 }
 
 export interface PokemonDetailDataResponse extends Response {
