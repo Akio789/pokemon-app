@@ -15,6 +15,7 @@ const Pokedex: React.FC = () => {
 
   return (
     <>
+      <h1 className="text-2xl font-bold my-2 text-center">Pokedex</h1>
       <SearchBar />
       <PokemonContext.Consumer>
         {

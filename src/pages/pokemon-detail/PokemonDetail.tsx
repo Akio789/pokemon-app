@@ -26,7 +26,7 @@ const PokemonDetail: React.FC = () => {
 
   return (
     pokemonData && (
-      <div className="container mx-auto xl:px-20 mt-4">
+      <div className="container mx-auto xl:px-20 mt-4 px-5">
         <MdArrowBack
           onClick={() => history.push('/')}
           className="w-10 h-10 cursor-pointer" />
