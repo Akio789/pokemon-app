@@ -27,9 +27,18 @@ export interface PokemonDetailDataSprites {
   back_default: string;
 }
 
+export interface PokemonDetailDataStat {
+  base_stat: number;
+  stat: {
+    name: string;
+    url: string;
+  }
+}
+
 export interface PokemonDetailData {
   sprites: PokemonDetailDataSprites;
   species: PokemonData;
+  stats: PokemonDetailDataStat[];
 }
 
 export interface PokemonDetailDataResponse extends Response {
